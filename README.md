@@ -1,8 +1,10 @@
 # Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
+Weekend assignemnt one!
+Salary Calculator!
 ## Description
+Project Duration: One Weekend
+
+Created a calculator to return your yearly salary based on data provided..
 
 Your project description goes here. What problem did you solve? How did you solve it?
 
