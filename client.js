@@ -3,12 +3,24 @@ $(readyNow)
 function readyNow() {
     console.log('doc is ready')
     $('#submit').on('click', submit);
+
+    // moves the text box over when enter key is pressed and submits with enter on the last text box
+    // $('#nameIn').keypress('enter', moveRight);
+    // $('#lastIn').keypress('enter', moveRight);
+    // $('#userID').keypress('enter', moveRight);
+    // $('#positionIn').keypress('enter', moveRight);
+    // $('#salaryIn').keypress('enter', submit);
+
     $('#container').on('click', '.delete', deleteBtn)
     $('#submit').mouseenter(mouseEnter);
     $('#submit').mouseleave(mouseLeave);
 }
 
 let total = 0;
+
+// function moveRight() {
+//     $(this).next().focus();
+// }
 
 function submit() {
 
@@ -21,28 +33,34 @@ function submit() {
     console.log(total)
 
     console.log('clicked')
-    $('#container').append(`
-        <tr>
-            <td>${name}</td>
-            <td>${last}</td>
-            <td>${ID}</td>
-            <td>${position}</td>
-            <td class="money">${salary}</td>
-            <td><button class="delete">delete</button></td>
-        </tr>
-    `)
-    $('#nameIn').val('');
-    $('#lastIn').val('');
-    $('#userID').val('');
-    $('#positionIn').val('');
-    $('#salaryIn').val('');
-    
-    $('#monthly').empty()
-    $('#monthly').append(`Total Monthly Costs: <span id="red">$${total}</span>`)
-    if (total >= 20000) {
-        $('#red').addClass("red")
+    if (name && last && ID && position && salary) {
+        $('#container').append(`
+            <tr>
+                <td>${name}</td>
+                <td>${last}</td>
+                <td>${ID}</td>
+                <td>${position}</td>
+                <td>${salary}</td>
+                <td><button class="delete">delete</button></td>
+            </tr>
+        `)
+        $('#nameIn').val('');
+        $('#lastIn').val('');
+        $('#userID').val('');
+        $('#positionIn').val('');
+        $('#salaryIn').val('');
+        
+        $('#monthly').empty()
+        $('#monthly').append(`Total Monthly Costs: <span id="red">$${total}</span>`)
+        $('#alert').empty()
+        if (total >= 20000) {
+            $('#red').addClass("red")
+        }
+    } else {
+        //alert("A text box was left empty!")
+        $('#alert').empty()
+        $('#alert').append('A text box was left empty!')
     }
-
     $('.delete').mouseenter(mouseEnter);
     $('.delete').mouseleave(mouseLeave);
     
@@ -63,8 +81,6 @@ function deleteBtn() {
     let salary = data.find("td:eq(4)").text()
     console.log(salary)
     total -= Math.round(Number(salary / 12) * 100) / 100;
-
-    console.log(total)
 
     $('#monthly').empty()
     $('#monthly').append(`Total Monthly Costs: <span id="red">$${total}</span>`)
