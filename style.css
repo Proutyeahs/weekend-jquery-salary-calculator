@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+    background-color: green;
+    padding: 1em;
+    border: 3px solid black;
+}
+
+#inputs {
+    text-align: center;
+    background-color: greenyellow;
+    padding: 1em;
+    border: 2px solid black;
+}
+
+body {
+    background-color: gray;
+}
+
+.red {
+    background-color: red;
+    display: inline;
+}
+
+#monthly {
+    float: right;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table td {
+    border: 1px solid black;
+    padding: 10px;
+}

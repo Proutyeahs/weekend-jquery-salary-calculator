@@ -11,16 +11,20 @@
 </head>
 <body>
     <header>
-        <h1>Calculate Your Salary!</h1>
+        <h1>Salary Calculator!</h1>
     </header>
     <main>
-        <input id="nameIn" type="text" placeholder="First Name">
-        <input id="lastIn" type="text" placeholder="Last Name">
-        <input id="userID" type="number" placeholder="User ID">
-        <input id="positionIn" type="text" placeholder="Position">
-        <input id="salaryIn" type="number" placeholder="Salary">
-        <button id="submit">Submit</button>
+        <h3>Add an employee:</h3>
+        <div id="inputs">
+            <input id="nameIn" type="text" placeholder="First Name">
+            <input id="lastIn" type="text" placeholder="Last Name">
+            <input id="userID" type="number" placeholder="User ID">
+            <input id="positionIn" type="text" placeholder="Position">
+            <input id="salaryIn" type="number" placeholder="Salary">
+            <button id="submit">Submit</button>
+        </div>
         <div>
+            <h4>Employees</h4>
             <table>
                 <thead>
                     <tr>
@@ -36,6 +40,7 @@
                 </tbody>
             </table>
         </div>
+        <h2 id="monthly">Total Monthly Costs: $0</h2>
     </main>
     <footer>
 
